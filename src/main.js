@@ -6,7 +6,7 @@ import "./registerServiceWorker";
 
 import Vuetify from 'vuetify';
 import axios from 'axios';
-import VueCookies from 'vue-cookies'
+import VueCookies from 'vue-cookies';
 import 'vant/lib/index.css';
 import {
   Button,
