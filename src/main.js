@@ -7,6 +7,8 @@ import "./registerServiceWorker";
 import Vuetify from 'vuetify';
 import axios from 'axios';
 import VueCookies from 'vue-cookies';
+import { mavonEditor } from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 import 'vant/lib/index.css';
 import {
   Button,
@@ -19,6 +21,7 @@ import {
 Vue.use(Button).use(Toast).use(Notify).use(Swipe).use(SwipeItem);
 Vue.use(Vuetify);
 Vue.use(VueCookies);
+Vue.use(mavonEditor);
 
 Vue.prototype.$axios = axios; // 在vue中使用axios，全局
 Vue.config.productionTip = false

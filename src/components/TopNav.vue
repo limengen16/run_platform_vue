@@ -124,8 +124,7 @@
         this.$root.$router.push("/Login");
       },
       Write() {
-        Toast.fail('暂未开放');
-        // this.$root.$router.push("/Write");
+        this.$root.$router.push("/Write");
       }
     }
   };
