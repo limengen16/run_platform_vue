@@ -6,6 +6,7 @@ import "./registerServiceWorker";
 
 import Vuetify from 'vuetify';
 import axios from 'axios';
+import qs from 'qs';
 import VueCookies from 'vue-cookies';
 import 'vant/lib/index.css';
 import {
@@ -21,7 +22,9 @@ Vue.use(Vuetify);
 Vue.use(VueCookies);
 
 Vue.prototype.$axios = axios; // 在vue中使用axios，全局
-Vue.config.productionTip = false
+Vue.prototype.$qs = qs;
+Vue.prototype.$base64 = require('js-base64').Base64;
+Vue.config.productionTip = false;
 
 new Vue({
   router,
