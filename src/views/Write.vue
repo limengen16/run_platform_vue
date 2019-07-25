@@ -3,6 +3,7 @@
     <input type="text" placeholder="标题是什么呢？">
     <mavon-editor v-model="content" ref="md" @imgAdd="$imgAdd" @change="change" style="min-height: 600px" />
     <button @click="submit">提交</button>
+    <p>保存成功：{{response}}</p>
   </div>
 </template>
 
@@ -24,7 +25,8 @@
         content: '', // 输入的markdown
         html: '', // 及时转的html
         configs: {},
-        data: ''
+        data: '',
+        response:''
       }
     },
     mounted() {
@@ -62,7 +64,8 @@
             'x-csrf-token': this.$cookies.get('csrfToken')
           }
         }).then((res) => {
-          console.log(res)
+          this.response = this.$base64.decode(res.data.articleData.content);
+          console.log('1'+this.response);
         }).catch(err => {
           alert(err);
         });
